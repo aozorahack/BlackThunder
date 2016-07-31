@@ -1,33 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Original Texts</h1>
+<div class="container-fluid">
+<h1>底本一覧</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Card</th>
-      <th>Book title</th>
-      <th>Book publisher</th>
-      <th>Book publish year</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+ <div class="row">
 
-  <tbody>
-    <% @original_texts.each do |original_text| %>
-      <tr>
-        <td><%= original_text.card_id %></td>
-        <td><%= original_text.book_title %></td>
-        <td><%= original_text.book_publisher %></td>
-        <td><%= original_text.book_publish_year %></td>
-        <td><%= link_to 'Show', original_text %></td>
-        <td><%= link_to 'Edit', edit_original_text_path(original_text) %></td>
-        <td><%= link_to 'Destroy', original_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+ <% @original_texts.each do |original_text| %>
+ <div class="col-sm-6 col-md-4">
+  <div class="panel panel-default">
 
-<br>
+   <div class="panel-heading">
+    <%= link_to original_text.book_title, original_text %>
+	 </div>
 
-<%= link_to 'New Original Text', new_original_text_path %>
+   <div class="panel-body">
+    <b>作品情報</b><br/>
+    作品ID: <%= link_to original_text.card_id, :controller => "cards", :action => "show", :id => original_text.card_id %><br/>
+    作品名: <%= link_to original_text.card.title, :controller => "cards", :action => "show", :id => original_text.card_id %><br/>
+    作品名読み: <%= original_text.card.title_kana if original_text.card %><br/>
+    <br/>
+    <b>底本情報</b><br/>
+    書籍名: <%= original_text.book_title %><br/>
+    出版社名: <%= original_text.book_publisher %><br/>
+    初版発行年: <%= original_text.book_publish_year %><br/>
+	 </div>
+
+	 <div class="panel-footer text-right">
+     <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+     <%= link_to '詳細と編集へ', edit_original_text_path(original_text) %>
+	 </div>
+
+  </div>
+ </div>
+ <% end %>
+
+ <div class="col-sm-6 col-md-4">
+  <div class="panel panel-default">
+   <div class="panel-heading">
+    <br/>
+   </div>
+   <div class="panel-body text-center">
+    <%= link_to '底本の新規登録', new_original_text_path %>
+   </div>
+   <div class="panel-footer">
+    <br/>
+   </div>
+  </div>
+ </div>
+
+</div><%# row %>
+
+</div><%# container-fluid %>
