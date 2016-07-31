@@ -4,7 +4,7 @@ class CreatePages < ActiveRecord::Migration[5.0]
       t.integer :original_text_id
       t.integer :page_no
       t.string :original_image_url
-      t.string :text_working
+      t.text :text_working
 
       t.timestamps
     end
