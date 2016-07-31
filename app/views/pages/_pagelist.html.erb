@@ -1,0 +1,10 @@
+<% page.original_text.pages.each do |pg| %>
+ <% if pg.id == page.id %>
+  <%= image_tag pg.original_image_url, :width => '120' %>
+ <% else %>
+  <%= link_to image_tag(pg.original_image_url, :width => '120'), :action => "edit_text", :id => pg.id %>
+ <% end %>
+ <br/>
+ <%= pg.page_no %>
+ <br /><br />
+<% end %>
