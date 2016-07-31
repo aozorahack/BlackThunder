@@ -1,0 +1,19 @@
+<div class="container-fluid">
+<h1>「<%= @page.original_text.book_title %>」 <%= @page.page_no %>頁 の編集</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%# 底本のビュー %>
+<%= image_tag @page.original_image_url %>
+
+<%# 編集エリア %>
+<%= form_for(@page) do |f| %>
+ <div class="field">
+  <%= f.text_area :text_working, :size => "100x20" %>
+ </div>
+ <div class="actions">
+  <%= f.submit %>
+ </div>
+<% end %>
+
+</div><%# container-fluid %>

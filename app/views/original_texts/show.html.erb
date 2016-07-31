@@ -29,6 +29,7 @@
   <ul>
   <% @original_text.pages.each do |pg| %>
    <li><%= link_to pg.page_no, :controller => "pages", :action => "show", :id => pg.id %>: <%= pg.original_image_url %>
+    [<%= link_to "編集", :controller => "pages", :action => "edit_text", :id => pg.id %>]
   <% end %>
 </ul>
 </p>

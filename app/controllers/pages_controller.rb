@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: [:show, :edit, :edit_text, :update, :destroy]
 
   # GET /pages
   # GET /pages.json
@@ -19,6 +19,10 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
+  end
+
+  # GET /pages/1/edit_text
+  def edit_text
   end
 
   # POST /pages
@@ -42,7 +46,8 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        #format.html { redirect_to @page, notice: 'Page was successfully updated.' }
+        format.html { redirect_to action: 'edit_text', id: @page.id, notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @page }
       else
         format.html { render :edit }
