@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20160731035846) do
 
   create_table "cards", force: :cascade do |t|
-    t.string   "titile"
+    t.string   "title"
     t.string   "title_kana"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
