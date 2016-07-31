@@ -5,7 +5,23 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+          .zoomer_wrapper {
+            border: 1px solid #ddd;
+            border-radius: 3px;
+    	height: 500px;
+    	margin: 10px 0;
+            overflow: hidden;
+    	width: 100%;
+          }
+        </style>
+        <script>
+        $(document).ready(function() {
+          $(".zoomer_basic").zoomer();
+        });
+    </script>
   </head>
 
   <body>
