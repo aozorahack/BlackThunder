@@ -22,3 +22,6 @@
 
 # Ignore Vendor libraries
 vendor
+
+# Ignore Temporary Files
+*.swp
