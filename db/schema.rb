@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160731035846) do
 
   create_table "pages", force: :cascade do |t|
     t.integer  "original_text_id"
+    t.integer  "page_no"
     t.string   "original_image_url"
     t.string   "text_working"
     t.datetime "created_at",         null: false
