@@ -1,0 +1,6 @@
+system("rm rake.md")
+system("cat [0-9][0-9][0-9][0-9].md >> rake.md")
+system("md2review rake.md > rake.re")
+system("rake pdf")
+system("review-epubmaker config.yml")
+system("review-webmaker config.yml")

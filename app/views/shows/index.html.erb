@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+<h1>底本一覧</h1>
+
+ <div class="row">
+
+ <% @original_texts.each do |original_text| %>
+ <div class="col-sm-6 col-md-4">
+  <div class="panel panel-default">
+
+   <div class="panel-heading">
+    <%= link_to original_text.book_title, original_text %>
+	 </div>
+
+   <div class="panel-body">
+    <b>作品情報</b><br/>
+    作品ID: <%= link_to original_text.card_id, :controller => "cards", :action => "show", :id => original_text.card_id %><br/>
+    作品名: <%= link_to original_text.card.title, :controller => "cards", :action => "show", :id => original_text.card_id %><br/>
+    作品名読み: <%= original_text.card.title_kana if original_text.card %><br/>
+    <br/>
+    <b>底本情報</b><br/>
+    書籍名: <%= original_text.book_title %><br/>
+    出版社名: <%= original_text.book_publisher %><br/>
+    初版発行年: <%= original_text.book_publish_year %><br/>
+	 </div>
+
+	 <div class="panel-footer text-right">
+     <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+     <%= link_to '詳細と編集へ', original_text %>
+	 </div>
+
+  </div>
+ </div>
+ <% end %>
+
+ <div class="col-sm-6 col-md-4">
+  <div class="panel panel-default">
+   <div class="panel-heading">
+    <br/>
+   </div>
+   <div class="panel-body text-center">
+    <%= link_to '底本の新規登録', new_original_text_path %>
+   </div>
+   <div class="panel-footer">
+    <br/>
+   </div>
+  </div>
+ </div>
+
+</div><%# row %>
+
+</div><%# container-fluid %>

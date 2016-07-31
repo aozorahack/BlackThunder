@@ -1,0 +1,1 @@
+json.array! @original_texts, partial: 'original_texts/original_text', as: :original_text

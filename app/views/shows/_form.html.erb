@@ -1,0 +1,37 @@
+<%= form_for(original_text) do |f| %>
+  <% if original_text.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(original_text.errors.count, "error") %> prohibited this original_text from being saved:</h2>
+
+      <ul>
+      <% original_text.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :card_id %>
+    <%= f.number_field :card_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :book_title %>
+    <%= f.text_field :book_title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :book_publisher %>
+    <%= f.text_field :book_publisher %>
+  </div>
+
+  <div class="field">
+    <%= f.label :book_publish_year %>
+    <%= f.text_field :book_publish_year %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
