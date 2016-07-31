@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Original Texts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>Book title</th>
+      <th>Book publisher</th>
+      <th>Book publish year</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @original_texts.each do |original_text| %>
+      <tr>
+        <td><%= original_text.card_id %></td>
+        <td><%= original_text.book_title %></td>
+        <td><%= original_text.book_publisher %></td>
+        <td><%= original_text.book_publish_year %></td>
+        <td><%= link_to 'Show', original_text %></td>
+        <td><%= link_to 'Edit', edit_original_text_path(original_text) %></td>
+        <td><%= link_to 'Destroy', original_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Original Text', new_original_text_path %>

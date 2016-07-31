@@ -1,0 +1,2 @@
+class OriginalText < ApplicationRecord
+end

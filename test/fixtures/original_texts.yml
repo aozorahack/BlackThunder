@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  card_id: 1
+  book_title: MyString
+  book_publisher: MyString
+  book_publish_year: MyString
+
+two:
+  card_id: 1
+  book_title: MyString
+  book_publisher: MyString
+  book_publish_year: MyString

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Original text:</strong>
+  <%= @page.original_text_id %>
+</p>
+
+<p>
+  <strong>Original image url:</strong>
+  <%= @page.original_image_url %>
+</p>
+
+<p>
+  <strong>Text working:</strong>
+  <%= @page.text_working %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

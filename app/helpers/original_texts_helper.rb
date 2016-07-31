@@ -1,0 +1,2 @@
+module OriginalTextsHelper
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @original_text.card_id %>
+</p>
+
+<p>
+  <strong>Book title:</strong>
+  <%= @original_text.book_title %>
+</p>
+
+<p>
+  <strong>Book publisher:</strong>
+  <%= @original_text.book_publisher %>
+</p>
+
+<p>
+  <strong>Book publish year:</strong>
+  <%= @original_text.book_publish_year %>
+</p>
+
+<%= link_to 'Edit', edit_original_text_path(@original_text) %> |
+<%= link_to 'Back', original_texts_path %>

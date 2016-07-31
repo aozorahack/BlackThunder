@@ -1,0 +1,1 @@
+json.partial! "original_texts/original_text", original_text: @original_text
